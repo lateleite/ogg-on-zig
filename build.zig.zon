@@ -1,0 +1,17 @@
+.{
+    .name = .ogg,
+    .fingerprint = 0x45a05c94304edeae,
+    .version = "1.3.6",
+    .minimum_zig_version = "0.15.2",
+    .dependencies = .{
+        .ogg = .{
+            .url = "https://github.com/xiph/ogg/archive/06a5e0262cdc28aa4ae6797627a783b5010440f0.tar.gz",
+            .hash = "N-V-__8AAFM3CwD6iAA1kggMPR8NHZ8VTb2zvRZ1Mt4BUfq9",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "include",
+    },
+}
