@@ -19,16 +19,17 @@ pub fn build(b: *std.Build) void {
         }),
     });
 
-    lib.addCSourceFiles(.{
+    lib.root_module.addCSourceFiles(.{
         .root = upstream.path(""),
         .files = &.{
             "src/bitwise.c",
             "src/framing.c",
         },
+        .language = .c,
     });
 
-    lib.addIncludePath(upstream.path("include"));
-    lib.addIncludePath(b.path("include"));
+    lib.root_module.addIncludePath(upstream.path("include"));
+    lib.root_module.addIncludePath(b.path("include"));
 
     lib.installHeadersDirectory(upstream.path("include"), "", .{});
     lib.installHeadersDirectory(b.path("include"), "", .{});
